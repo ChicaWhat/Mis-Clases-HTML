@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 03 - Formularios</title>
+    <style>
+        label, button {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Dentro del form existen dos atributos 'action' y 'method' que en otra ocasion nos explicarán -->
+
+<form action="" method="">
+
+    <!-- En un formulario, el for de label y el id del input deben de contener el mismo nombre -->
+    <!-- El atributo name es IMPRESCINDIBLE que estén en todos los input para que se lleve la información a un servidor y lo pueda registrar -->
+    <!-- El autofocus solamamente se puede utilizar una única vez -->
+
+    <label for="nombreUsuario">Nombre:</label>
+    <input type="text" id="nombreUsuario" name="nombreUsuario" minlength="3" maxlength="12" autofocus>
+
+    <label for="correoElectronico">Correo electronico:</label>
+    <input type="email" id="correoElectronico" name="email" placeholder="lokendo@gmail.com" >
+
+    <!-- Añadimos required al final del input si queremos que sea necesario que se rellene para que se envíe el formulario -->
+
+    <label for="password">Contraseña:</label>
+    <input type="password" id="password" name="password"  required>
+
+    <label for="edadUsuario">Edad</label>
+    <input type="number" id="edadUsuario" name="edad">
+
+    <label for="fechaNacimiento">Selecciona tu fecha de nacimiento</label>
+    <input type="date" name="fechaNacimiento" id="fechaNacimiento">
+
+    <label for="busqueda">Busca un dato</label>
+    <input type="search" name="busquedaDato" id="busqueda">
+
+    <!-- Si se pone disable dentro de textarea, se bloquea la accion que puedas hacer dentro del label -->
+    <label for="comentarios">Deja tu comentario</label>
+    <textarea name="comentarios" id="comentarios" cols="50" rows="10" disabled></textarea>
+
+    <!-- Añadir a un input checked para que quede marcado de manera predeterminada a la hora de estar realizando el formulario -->
+   <label>Estado Civil
+        <input type="radio" name="estadoCivil" value="S">Soltero/a
+        <input type="radio" name="estadoCivil" value="C" checked>Casado/a 
+        <input type="radio" name="estadoCivil" value="D">Divorciada/a 
+        <input type="radio" name="estadoCivil" value="V">Viudo/a 
+    </label>
+
+    <label for="turno">Elige el turno en el que quieres estudiar</label>
+    <select name="turno" id="turno">
+        <option value="TM">Mañana</option>
+        <option value="TT">Tarde</option>
+        <option value="TN">Noche</option>
+    </select>
+
+
+    <!-- Añadir reset a un button hace que me elimine todo lo puesto -->
+    <!-- Añadir submit a un buttom envia los datos del formulario  -->
+    <button type="reset">Resetear los campos</button>
+    <button type="submit">Enviar datos</button>
+
+    <form action="">
+    <!-- Fieldset sirve para agrupar campos -->
+
+        <fieldset>
+            <legend>Elige el idioma que hablas</legend>
+
+
+            <!-- Cuando el input está dentro de label no hace falta el for ni el id. Cuando un atributo está dentro de una etiqueta ya están vinculados -->
+            <!-- Se puede tener separado cada label e input o meter en un solo label todos los input -->
+            <label>
+                <input type="checkbox" value="ES">Español
+            </label>
+
+            <label>
+                <input type="checkbox" value="EN">Inglés
+            </label>
+
+            <label>
+                <input type="checkbox" value="FR">Francés
+            </label>
+
+        </fieldset>
+
+    </form>
+
+
+</form>
+
+</body>
+</html>
